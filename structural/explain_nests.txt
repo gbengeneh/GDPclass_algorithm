@@ -1,0 +1,157 @@
+Step-by-step Explanation
+Function Definition
+def analyze_nested_structure(data):
+
+This creates a function called analyze_nested_structure.
+
+It accepts one parameter:
+
+data → the structure you want to analyze.
+Inner Function
+def count_depth(obj, current_depth=0):
+
+This function is inside the main function.
+
+It uses recursion (a function calling itself).
+
+Parameters:
+
+obj → current item being checked
+current_depth → how deep we currently are
+
+Default depth starts at 0.
+
+Checking if Object is a List or Tuple
+if isinstance(obj, (list, tuple)):
+
+isinstance() checks the datatype.
+
+This means:
+
+"If obj is a list or tuple..."
+
+Example:
+
+[1, 2]
+(1, 2)
+Empty List Check
+if not obj:
+    return current_depth
+
+If the list is empty:
+
+[]
+
+there is nothing more inside it.
+
+So return the current depth.
+
+Recursive Depth Search
+return max(count_depth(item, current_depth + 1) for item in obj)
+
+This is the most important line.
+
+It:
+
+Loops through every item
+Calls count_depth() again
+Increases depth by 1
+Finds the deepest level using max()
+Example
+
+Suppose:
+
+[1, [2, [3]]]
+
+The recursion works like this:
+
+Level 1 -> [1, [2, [3]]]
+Level 2 -> [2, [3]]
+Level 3 -> [3]
+
+Maximum depth = 3
+
+Dictionary Handling
+elif isinstance(obj, dict):
+
+If the object is a dictionary:
+
+{"a": {"b": {"c": 1}}}
+
+it checks the dictionary values recursively.
+
+Non-nested Values
+else:
+    return current_depth
+
+If it's just a normal value like:
+
+5
+"hello"
+True
+
+then recursion stops.
+
+Final Part
+depth = count_depth(data)
+
+Starts the recursive checking.
+
+print(f"Maximum nesting depth: {depth}")
+
+Prints the result.
+
+return depth
+
+Returns the depth value.
+
+Test Example
+nested_list = [1, [2, [3, [4, [5]]]]]
+
+Structure:
+
+Level 1 -> [1, [...]]
+Level 2 -> [2, [...]]
+Level 3 -> [3, [...]]
+Level 4 -> [4, [...]]
+Level 5 -> [5]
+
+So:
+
+Maximum nesting depth: 5
+Visual Representation
+[1,
+  [2,
+    [3,
+      [4,
+        [5]
+      ]
+    ]
+  ]
+]
+
+Each indentation level increases depth.
+
+Key Concepts Used
+Functions
+Nested functions
+Recursion
+Lists
+Dictionaries
+Tuples
+isinstance()
+max()
+Generators
+
+Simple Analogy
+
+Imagine opening boxes inside boxes:
+
+Box
+ └── Box
+      └── Box
+           └── Box
+
+The code counts:
+
+"How many boxes deep can we go?"
