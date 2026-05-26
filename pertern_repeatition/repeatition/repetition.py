@@ -26,5 +26,5 @@ def find_repeating_pattern(sequence):
     return None
 
 # Test
-sequence = [1, 2, 3, 1, 2, 3, 1, 2, 3]
+sequence = [1, 2, 3, 1, 2,3, 1, 2, 3]
 find_repeating_pattern(sequence)
