@@ -101,4 +101,5 @@ if __name__ == "__main__":
     my_car.brake()
     my_car.brake()
     my_car.brake()
+    my_car.brake()
     my_car.get_status()
