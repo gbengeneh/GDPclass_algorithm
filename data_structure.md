@@ -9,7 +9,7 @@ A data structure is a way of organizing and storing data so it can be accessed, 
 
 ## 1. Array
 
-### What it is
+### What it is an Array
 A fixed-size, ordered collection stored in contiguous (side-by-side) memory. Think of a row of numbered lockers — locker #0, locker #1, locker #2, etc.
 
 ### Why it matters
@@ -42,7 +42,7 @@ arr[2] = 35     # arr is now [10, 20, 35, 40]
 
 ## 2. String
 
-### What it is
+### What it is String
 A sequence of characters. In most programming languages, a string is essentially an array of characters under the hood.
 
 ### Why it matters
